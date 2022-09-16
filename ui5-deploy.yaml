@@ -17,7 +17,7 @@ builder:
           destination: S4S
           url: http://usawcon00004.us.deloitte.com:8010
         app:
-          name: ZFIRST_ABAP
+          name: ZFIRST_BAS
           description: First BAS on-premise app
           package: $tmp
-          transport: N
+          transport: ""
