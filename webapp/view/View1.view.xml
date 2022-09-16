@@ -1,0 +1,15 @@
+<mvc:View controllerName="com.firstbas.firstbas.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Shell id="_IDGenShell1">
+        <App id="app1">
+            <Page id="page" title="{i18n>title}">
+                <content>
+                    <List id="_IDList" items="{/salesOrderHeaderSet}">
+                        <StandardListItem id="_IDStandardListItem1" title="{Vbeln}" description="{Ernam}"/>
+                    </List>
+                </content>
+            </Page>
+        </App>
+    </Shell>
+</mvc:View>
