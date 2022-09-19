@@ -20,9 +20,17 @@
                 "uri": "/sap/opu/odata/sap/ZTEST_ODATA_AP_SRV/",
                 "type": "OData",
                 "settings": {
-                    "annotations": [],
                     "localUri": "localService/metadata.xml",
-                    "odataVersion": "2.0"
+                    "annotations": [
+                        "annotation0"
+                    ]
+                }
+            },
+            "annotation0": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation0.xml",
+                "settings": {
+                    "localUri": "annotations/annotation0.xml"
                 }
             }
         }

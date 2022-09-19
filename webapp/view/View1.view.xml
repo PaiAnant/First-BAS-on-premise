@@ -1,13 +1,33 @@
 <mvc:View controllerName="com.firstbas.firstbas.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:table="sap.ui.table"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
     <Shell id="_IDGenShell1">
         <App id="app1">
             <Page id="page" title="{i18n>title}">
                 <content>
-                    <List id="_IDList" items="{/salesOrderHeaderSet}">
+                    <smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="UniqueAndStablePersistencyKey" considerSelectionVariants="true" entitySet="salesOrderHeaderSet" useDateRangeType="true">
+                        <smartFilterBar:controlConfiguration>
+
+                            <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration1" index="0" key="Vbeln" visibleInAdvancedArea="true" />
+                            <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration2" index="1" key="Kunnr" visibleInAdvancedArea="true" />
+
+                        </smartFilterBar:controlConfiguration>
+
+                        <!-- layout data used to make the table growing but the filter bar fixed -->
+                        <smartFilterBar:layoutData>
+                            <FlexItemData id="_IDGenFlexItemData1" shrinkFactor="0"/>
+                        </smartFilterBar:layoutData>
+                    </smartFilterBar:SmartFilterBar>
+
+                    <smartTable:SmartTable id="smartid" smartFilterId="smartFilterBar" initiallyVisibleFields="Vbeln,Kunnr,Vkorg" entitySet="salesOrderHeaderSet" tableType="ResponsiveTable" persistencyKey="SmartTablePKey" useVariantManagement="true" smartVariant="pageVariantId" useExportToExcel="true" useTablePersonalisation="true" header="No. Of Entries" showRowCount="true" demandPopin="true" enableAutoBinding="true" class="sapUiSmallMarginTop">
+                    </smartTable:SmartTable>
+                    <!-- <List id="_IDList" items="{/salesOrderHeaderSet}">
                         <StandardListItem id="_IDStandardListItem1" title="{Vbeln}" description="{Ernam}"/>
-                    </List>
+                    </List> -->
                 </content>
             </Page>
         </App>
